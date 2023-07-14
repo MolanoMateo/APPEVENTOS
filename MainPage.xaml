@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPEVENTOS.MainPage">
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+        <Image Source="company_logo.jpg" HeightRequest="150" WidthRequest="150" />
+
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Welcome!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center" />
+            <Label Text="Login to your account" FontSize="18" TextColor="Gray" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Ingrese los datos del nuevo contacto">
+                        <EntryCell x:Name="mail"
+                       Placeholder="Mail" />
+                        <EntryCell x:Name="password"
+                       Placeholder="Contraseña"/>
+
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="LogIn"
+                Margin="20"
+                Clicked="onClickLogin" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+            <Label Text="No tienes una cuenta?" TextColor="Gray" />
+            <Label Text="Registrate" TextColor="#50b3f2">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Label_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:Class="APPEVENTOS.CarritoPage"
+             Title="CarritoPage">
+    <StackLayout>
+    <ListView x:Name="listaContactos" RowHeight="80">
+        <ListView.ItemTemplate>
+
+            <DataTemplate>
+                <ViewCell>
+                        <StackLayout Spacing="10" Margin="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical">
+                                <HorizontalStackLayout VerticalOptions="Fill">
+                                    <Label Text="Evento: "  HorizontalOptions="Start" />
+                                    <Label Text="{Binding titulo}"  HorizontalOptions="End" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout VerticalOptions="Fill">
+                                    <Label Text="Costo: $"  HorizontalOptions="Start" />
+                                    <Label Text="{Binding costo}"  HorizontalOptions="End" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout VerticalOptions="Fill">
+                                    <Label Text="Boletos: " HorizontalOptions="Start" />
+                                    <Label Text="{Binding cantidad}" HorizontalOptions="End" />
+                                </HorizontalStackLayout>
+
+                            </StackLayout>
+
+                        <!--  <ImageCell Text="{Binding nombre}"
+                               Detail="{Binding telefono}"
+                               ImageSource="{Binding imagen}"/>
+                        -->
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+
+        </ListView.ItemTemplate>
+    </ListView>
+        <StackLayout Orientation="Horizontal" >
+            <Button Text="Pagar"            
+                Margin="5"       
+                BackgroundColor="PaleTurquoise"
+                    TextColor="Black"
+                Clicked="onClickPagar" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Vaciar Carrito"  
+                    BackgroundColor="PaleTurquoise"
+                    TextColor="Black"
+                Margin="5"
+                Clicked="onClickVaciar"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        
+
+
+
+    </StackLayout>
+
+    <ContentPage.Resources>
+        <Style x:Key="SwitchCameraButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+</ContentPage>
+    
+    

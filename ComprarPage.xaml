@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls"
+             x:Class="APPEVENTOS.ComprarPage"
+             Title="ComprarPage">
+    <VerticalStackLayout>
+        
+
+        <Label
+                x:Name="titulo"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+        <Label
+                x:Name="descripcion"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+        <Label
+                x:Name="costo"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+        <Label
+                x:Name="ubicacion"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+        <Label
+                x:Name="fecha"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+        <StackLayout Orientation="Horizontal" >
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="cantidad de entradas">
+                        <EntryCell x:Name="cantidad"
+                       Placeholder="1, 2, 3..."
+                               Keyboard="Numeric"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Añadir al carrito"  
+                    BackgroundColor="PaleTurquoise"
+                    TextColor="Black"
+                Margin="5"
+                Clicked="onClickCarrito"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        
+     
+
+    </VerticalStackLayout>
+</ContentPage>
